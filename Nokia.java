@@ -283,6 +283,7 @@ public class Nokia {
                 default:
                     System.out.println("Invalid option");
             }
+            
         }
-    }
+    }    git add Nokia.java
 }
