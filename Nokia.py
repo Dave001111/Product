@@ -1,201 +1,236 @@
+# Nokia 3310 Menu in Python
+
+inbox = []
+sent_messages = []
+
+missed_calls = ["David", "Dayo"]
+dialed_calls = ["Wale", "Afolabi"]
+received_calls = ["Abbey", "Maleek"]
+
 while True:
 
     print("\n NOKIA 3310 ")
     print("1. Messages")
     print("2. Calls")
-    print("3. Ringtones")
-    print("4. Games")
-    print("5. Settings")
+    print("3. Settings")
+    print("4. Ringtones")
+    print("5. Games")
     print("6. Exit")
 
-    mainChoice = int(input("Enter option: "))
+    main_choice = int(input("Enter option: "))
 
-    match mainChoice:
+    #  MESSAGES 
+    if main_choice == 1:
 
-        case 1:
+        while True:
 
-            while True:
+            print("\n Messages ")
+            print("1. Write Message")
+            print("2. Inbox")
+            print("3. Sent Messages")
+            print("4. Back")
 
-                print("\n Messages ")
-                print("1. Write Message")
-                print("2. Inbox")
-                print("3. Sent Messages")
-                print("4. Drafts")
-                print("5. Delete Messages")
-                print("6. Back")
+            message_choice = int(input("Enter option: "))
 
-                messageChoice = int(input("Enter option: "))
+            if message_choice == 1:
+                message = input("Write your message: ")
+                sent_messages.append(message)
+                inbox.append(message)
+                print("Message sent successfully")
 
-                match messageChoice:
+            elif message_choice == 2:
+                print("\n Inbox ")
+                if len(inbox) == 0:
+                    print("No messages")
+                else:
+                    for i in range(len(inbox)):
+                        print(i + 1, inbox[i])
 
-                    case 1:
-                        print("Write Message selected")
+            elif message_choice == 3:
+                print("\n Sent Messages ")
+                if len(sent_messages) == 0:
+                    print("No sent messages")
+                else:
+                    for i in range(len(sent_messages)):
+                        print(i + 1, sent_messages[i])
 
-                    case 2:
-                        print("Inbox selected")
+            elif message_choice == 4:
+                break
 
-                    case 3:
-                        print("Sent Messages selected")
+            else:
+                print("Invalid option")
 
-                    case 4:
-                        print("Drafts selected")
+    #  CALLS 
+    elif main_choice == 2:
 
-                    case 5:
-                        print("Delete Messages selected")
+        while True:
 
-                    case 6:
+            print("\n Calls ")
+            print("1. Missed Calls")
+            print("2. Dialed Calls")
+            print("3. Received Calls")
+            print("4. Back")
+
+            call_choice = int(input("Enter option: "))
+
+            if call_choice == 1:
+                print("\n Missed Calls ")
+                for i in range(len(missed_calls)):
+                    print(i + 1, missed_calls[i])
+
+            elif call_choice == 2:
+                print("\n Dialed Calls ")
+                for i in range(len(dialed_calls)):
+                    print(i + 1, dialed_calls[i])
+
+            elif call_choice == 3:
+                print("\n Received Calls ")
+                for i in range(len(received_calls)):
+                    print(i + 1, received_calls[i])
+
+            elif call_choice == 4:
+                break
+
+            else:
+                print("Invalid option")
+
+    # SETTINGS 
+    elif main_choice == 3:
+
+        while True:
+
+            print("\n Settings ")
+            print("1. Phone Settings")
+            print("2. Display Settings")
+            print("3. Security Settings")
+            print("4. Back")
+
+            setting_choice = int(input("Enter option: "))
+
+            # Phone Settings
+            if setting_choice == 1:
+
+                while True:
+                    print("\n Phone Settings ")
+                    print("1. Language")
+                    print("2. Phone Name")
+                    print("3. Back")
+
+                    phone_choice = int(input("Enter option: "))
+
+                    if phone_choice == 1:
+                        print("Language selected")
+                    elif phone_choice == 2:
+                        print("Phone Name selected")
+                    elif phone_choice == 3:
                         break
-
-                    case _:
+                    else:
                         print("Invalid option")
 
-        case 2:
+            # Display Settings
+            elif setting_choice == 2:
 
-            while True:
+                while True:
+                    print("\n Display Settings ")
+                    print("1. Brightness")
+                    print("2. Wallpaper")
+                    print("3. Back")
 
-                print("\n Calls ")
-                print("1. Missed Calls")
-                print("2. Dialed Calls")
-                print("3. Received Calls")
-                print("4. Call Duration")
-                print("5. Delete Call Logs")
-                print("6. Back")
+                    display_choice = int(input("Enter option: "))
 
-                callChoice = int(input("Enter option: "))
-
-                match callChoice:
-
-                    case 1:
-                        print("Missed Calls selected")
-
-                    case 2:
-                        print("Dialed Calls selected")
-
-                    case 3:
-                        print("Received Calls selected")
-
-                    case 4:
-                        print("Call Duration selected")
-
-                    case 5:
-                        print("Delete Call Logs selected")
-
-                    case 6:
+                    if display_choice == 1:
+                        print("Brightness selected")
+                    elif display_choice == 2:
+                        print("Wallpaper selected")
+                    elif display_choice == 3:
                         break
-
-                    case _:
+                    else:
                         print("Invalid option")
 
-        case 3:
+            # Security Settings
+            elif setting_choice == 3:
 
-            while True:
+                while True:
+                    print("\n Security Settings ")
+                    print("1. Change PIN")
+                    print("2. Phone Lock")
+                    print("3. Back")
 
-                print("\n Ringtones ")
-                print("1. Default Tone")
-                print("2. Silent")
-                print("3. Vibrate")
-                print("4. Volume Control")
-                print("5. Composer")
-                print("6. Back")
+                    security_choice = int(input("Enter option: "))
 
-                ringtoneChoice = int(input("Enter option: "))
-
-                match ringtoneChoice:
-
-                    case 1:
-                        print("Default Tone selected")
-
-                    case 2:
-                        print("Silent selected")
-
-                    case 3:
-                        print("Vibrate selected")
-
-                    case 4:
-                        print("Volume Control selected")
-
-                    case 5:
-                        print("Composer selected")
-
-                    case 6:
+                    if security_choice == 1:
+                        print("Change PIN selected")
+                    elif security_choice == 2:
+                        print("Phone Lock selected")
+                    elif security_choice == 3:
                         break
-
-                    case _:
+                    else:
                         print("Invalid option")
 
-        case 4:
+            elif setting_choice == 4:
+                break
 
-            while True:
+            else:
+                print("Invalid option")
 
-                print("\n Games ")
-                print("1. Snake")
-                print("2. Space Impact")
-                print("3. Bantumi")
-                print("4. Memory Game")
-                print("5. Back")
+    #  RINGTONES 
+    elif main_choice == 4:
 
-                gameChoice = int(input("Enter option: "))
+        while True:
 
-                match gameChoice:
+            print("\n Ringtones ")
+            print("1. Default Tone")
+            print("2. Silent")
+            print("3. Vibrate")
+            print("4. Volume")
+            print("5. Back")
 
-                    case 1:
-                        print("Snake selected")
+            ringtone_choice = int(input("Enter option: "))
 
-                    case 2:
-                        print("Space Impact selected")
+            if ringtone_choice == 1:
+                print("Default Tone selected")
+            elif ringtone_choice == 2:
+                print("Silent selected")
+            elif ringtone_choice == 3:
+                print("Vibrate selected")
+            elif ringtone_choice == 4:
+                print("Volume selected")
+            elif ringtone_choice == 5:
+                break
+            else:
+                print("Invalid option")
 
-                    case 3:
-                        print("Bantumi selected")
+    #  GAMES 
+    elif main_choice == 5:
 
-                    case 4:
-                        print("Memory Game selected")
+        while True:
 
-                    case 5:
-                        break
+            print("\n Games ")
+            print("1. Football")
+            print("2. COD")
+            print("3. SM Manager")
+            print("4. Temple Run")
+            print("5. Back")
 
-                    case _:
-                        print("Invalid option")
+            game_choice = int(input("Enter option: "))
 
-        case 5:
+            if game_choice == 1:
+                print("Football selected")
+            elif game_choice == 2:
+                print("COD selected")
+            elif game_choice == 3:
+                print("SM Manager selected")
+            elif game_choice == 4:
+                print("Temple Run selected")
+            elif game_choice == 5:
+                break
+            else:
+                print("Invalid option")
 
-            while True:
+    #      EXIT 
+    elif main_choice == 6:
+        print("Exiting program...")
+        break
 
-                print("\n Settings ")
-                print("1. Phone Settings")
-                print("2. Display Settings")
-                print("3. Security Settings")
-                print("4. Date and Time")
-                print("5. Restore Factory Settings")
-                print("6. Back")
-
-                settingChoice = int(input("Enter option: "))
-
-                match settingChoice:
-
-                    case 1:
-                        print("Phone Settings selected")
-
-                    case 2:
-                        print("Display Settings selected")
-
-                    case 3:
-                        print("Security Settings selected")
-
-                    case 4:
-                        print("Date and Time selected")
-
-                    case 5:
-                        print("Restore Factory Settings selected")
-
-                    case 6:
-                        break
-
-                    case _:
-                        print("Invalid option")
-
-        case 6:
-            print("Exiting program...")
-            break
-
-        case _:
-            print("Invalid option")
+    else:
+        print("Invalid option")
